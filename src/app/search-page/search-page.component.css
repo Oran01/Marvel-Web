@@ -1,0 +1,215 @@
+/* Apply box-sizing border-box to all elements to include padding and border in element's total width and height */
+* {
+  box-sizing: border-box;
+}
+
+/* Style for the body of the page */
+body {
+  margin: 0px; /* Remove default margin */
+  padding: 0px; /* Remove default padding */
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  font-family: "Lato" !important; /* Use Lato font for the entire page */
+}
+
+/* Style for the search box container */
+.search-box {
+  width: fit-content; /* Container width based on content */
+  height: fit-content; /* Container height based on content */
+  position: absolute; /* Position absolutely for precise placement */
+  top: 20%; /* Position from the top of the viewport */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Center vertically and horizontally */
+}
+
+/* Style for the search input field */
+.input-search {
+  height: 50px; /* Input field height */
+  width: 50px; /* Input field width */
+  border-style: none; /* No border initially */
+  padding: 10px; /* Padding inside the input */
+  font-size: 18px; /* Font size of the text */
+  letter-spacing: 2px; /* Spacing between letters */
+  outline: none; /* Remove default outline */
+  border-radius: 25px; /* Rounded corners */
+  transition: all 0.5s ease-in-out; /* Smooth transition for changes */
+  padding-right: 40px; /* Space for the search button */
+  color: #151515; /* Text color */
+}
+
+/* Placeholder styling for the search input */
+.input-search::placeholder {
+  color: #151515; /* Placeholder text color */
+  font-size: 18px; /* Font size of the placeholder text */
+  letter-spacing: 2px; /* Spacing between letters */
+  font-weight: 100; /* Font weight of the placeholder text */
+  background: transparent !important; /* Transparent background */
+}
+
+/* Style for the search button */
+.btn-search {
+  width: 50px; /* Button width */
+  height: 50px; /* Button height */
+  border-style: none; /* No border */
+  font-size: 20px; /* Font size of the icon */
+  font-weight: bold; /* Bold font weight */
+  outline: none; /* Remove default outline */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  border-radius: 50%; /* Circular button */
+  position: absolute; /* Position absolutely within the search box */
+  right: 0px; /* Align to the right of the search box */
+  background: transparent !important; /* Transparent background */
+  color: #151515; /* Icon color */
+  pointer-events: painted; /* Ensure button is interactive */
+}
+
+/* Style for the search input when the button is focused */
+.btn-search:focus ~ .input-search {
+  width: 300px; /* Expand width when focused */
+  border-radius: 0px; /* Remove border radius when focused */
+  background-color: transparent; /* Transparent background */
+  border-bottom: 1px solid #151515; /* Add a bottom border */
+  transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2); /* Smooth transition */
+  background: transparent !important; /* Ensure background is transparent */
+}
+
+/* Style for the search input when it is focused */
+.input-search:focus {
+  width: 300px; /* Expand width when focused */
+  background-color: transparent; /* Transparent background */
+  border-bottom: 1px solid #151515; /* Add a bottom border */
+  transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2); /* Smooth transition */
+  background: transparent !important; /* Ensure background is transparent */
+  outline: 2px solid #c6a972; /* Add outline on focus */
+  outline-offset: 2px; /* Offset outline slightly */
+  border-radius: 16px; /* Rounded corners on focus */
+}
+
+/* Style for the container holding search results or cards */
+.container {
+  display: flex; /* Use flexbox for layout */
+  flex-wrap: wrap; /* Allow wrapping of items */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  margin-top: auto; /* Margin auto to center container */
+  margin-left: auto; /* Margin auto to center container */
+  margin-right: auto; /* Margin auto to center container */
+  max-width: 1080px; /* Maximum width of the container */
+  padding-top: 200px; /* Space from the top */
+}
+
+/* Style for individual cards in the search results */
+.card {
+  height: 350px; /* Card height */
+  width: 230px; /* Card width */
+  background: black; /* Black background */
+  border-radius: 10px; /* Rounded corners */
+  margin: 10px; /* Margin around the card */
+  overflow: hidden; /* Hide overflow content */
+  position: relative; /* Position relative for child positioning */
+  transition: all 0.2s; /* Smooth transition for hover effects */
+}
+
+/* Style for images inside cards */
+.card img {
+  border-radius: 10px; /* Rounded corners for images */
+  height: 100%; /* Full height */
+  width: 100%; /* Full width */
+  transition: all 0.2s; /* Smooth transition for hover effects */
+}
+
+/* Style for the info section of the card */
+.card .info {
+  width: 100%; /* Full width */
+  background: linear-gradient(to top, #000 70%, transparent); /* Gradient background */
+  position: absolute; /* Position absolutely within the card */
+  bottom: -340px; /* Position off-screen initially */
+  transition: all 0.2s; /* Smooth transition for hover effects */
+  color: white; /* Text color */
+  padding: 18px; /* Padding inside the info section */
+  padding-right: 10px; /* Additional padding on the right */
+}
+
+/* Show info section when hovering over the card */
+.card:hover .info {
+  bottom: 0; /* Move info section into view */
+  transition: all 0.2s; /* Smooth transition */
+}
+
+/* Style for the top background of the card */
+.card .top-bg {
+  height: 50px; /* Height of the top background */
+  width: 100%; /* Full width */
+  background: linear-gradient(to bottom, #000 4%, transparent); /* Gradient background */
+  position: absolute; /* Position absolutely within the card */
+  top: 0px; /* Position at the top of the card */
+  transition: all 0.2s; /* Smooth transition */
+}
+
+/* Style for the TV show name in the card info */
+.card .info .tvshow-name {
+  margin-top: 25px; /* Space from the top */
+  font-size: 16px; /* Font size */
+}
+
+/* Style for other details in the card info */
+.card .info .oth-detail {
+  font-size: 9px; /* Font size */
+  margin-top: 10px; /* Space from the top */
+  letter-spacing: 0.7px; /* Spacing between letters */
+}
+
+/* Style for the description text in the card info */
+.card .info .description {
+  font-size: 11px; /* Font size */
+  color: gray; /* Text color */
+  margin-top: 20px; /* Space from the top */
+  color: white; /* Override gray color to white */
+  font-weight: 300; /* Font weight */
+}
+
+/* Style for the stars rating in the card info */
+.card .info .stars {
+  margin-top: 7px; /* Space from the top */
+  font-size: 10px; /* Font size */
+}
+
+/* Style for individual stars in the rating */
+.card .info .stars i {
+  margin-left: 5px; /* Space to the left of the star */
+  position: relative; /* Relative positioning */
+  left: -5px; /* Adjust position to the left */
+}
+
+/* Style for the rating color */
+.card .info .stars .rating {
+  color: #f3c23f; /* Gold color for rating */
+}
+
+/* Style for the container that holds no results message */
+.cont {
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  margin-top: 30px; /* Space from the top */
+  margin-bottom: -40px; /* Negative margin to adjust positioning */
+}
+
+/* Style for the no results message */
+.no-results {
+  position: fixed; /* Fixed position on the screen */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Center the element */
+  text-align: center; /* Center text alignment */
+}
+
+/* Responsive design adjustments for medium screens */
+@media only screen and (min-width: 768px) and (max-width: 913px) {
+  .container {
+    padding-top: 310px; /* Adjust top padding for medium screens */
+  }
+}

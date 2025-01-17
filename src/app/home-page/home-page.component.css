@@ -1,0 +1,102 @@
+@import '../../app/navbar/navbar.component.css'; /* Import styles from navbar component */
+@font-face {
+    src: url(../../assets/fonts/HeroesAssembleOutlineItalic-XOLZ.otf); /* Custom font file */
+    font-family: nos; /* Define font-family name */
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+/* Styling for the first section of the page */
+.sectionOne {
+    min-height: 100vh; /* Full viewport height */
+    width: 100%; /* Full width */
+    top: 54px; 
+    background-image: linear-gradient(rgba(56, 60, 77, 0.7),rgba(56, 60, 77, 0.7)), url(../../assets/HomeImg/backgroundHome.png); /* Background gradient and image */
+    background-position: center; /* Center the background image */
+    background-size: cover; /* Cover the entire section with the image */
+    position: relative;
+    z-index: 0; /* Layer positioning */
+}
+
+/* Global body styling */
+body {
+    font-family: 'Chakra Petch', sans-serif; /* Set font-family for the body */
+}
+
+/* Styling for the text box in section one */
+.text-box {
+    width: 90%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the text box */
+    text-align: center;
+    display: inline-block;
+}
+
+/* Heading styling in the text box */
+.text-box h1 {
+    font-size: 3vw; /* Responsive font size */
+}
+
+/* Paragraph styling in the text box */
+.text-box p {
+    margin: 10px 0 40px;
+    font-size: 1.5vw; /* Responsive font size */
+    color: white;
+}
+
+/* Styling for the second section of the page */
+.sectionTwo {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+    height: 400px;
+    background-color: white;
+}
+
+/* Styling for links inside rows on hover */
+.row a:hover {
+    border: 3px solid black; /* Black border on hover */
+    border-radius: 30px; /* Rounded corners */
+    transition: .2s; /* Smooth transition */
+}
+
+/* Heading styling inside rows */
+.row h2 {
+    color: black;
+}
+
+/* Row container styling */
+.row {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between; /* Space elements evenly */
+}
+
+/* Responsive styling for screens with max width of 600px */
+@media only screen and (max-width: 600px) {
+    .row {
+        margin-top: 5%;
+        display: flex;
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center align the items horizontally */
+        justify-content: center; /* Center align the items vertically */
+    }
+
+    .text-box h1 {
+        font-size: 3vw; /* Responsive font size */
+    }
+
+    .text-box p {
+        margin: 10px 0 40px;
+        font-size: 2.5vw; /* Larger font size for readability */
+    }
+}

@@ -1,0 +1,97 @@
+<!-- Link to Font Awesome icons for using various icons in the page -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Link to Bootstrap CSS for styling the page elements -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<!-- Link to an older version of Bootstrap CSS (3.3.7) for backward compatibility -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- Link to Bootstrap JavaScript for interactive components -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Main container to center and align the content -->
+<div class="container">
+  <div class="row">
+    <!-- Column for centering the card in the middle of the page -->
+    <div class="col-md-6">
+      <!-- Card element to contain the signup form and style it -->
+      <div class="card">
+        <!-- Header section of the card -->
+        <div class="text-center">
+          <!-- Title for the signup form -->
+          <h1>Sign Up</h1>
+        </div>
+        
+        <!-- Form for user signup, bound to the signup() method on submission -->
+        <form (ngSubmit)="signup()">
+          <!-- Full Name input field with associated label -->
+          <div class="mb-3">
+            <label for="fullName" class="form-label">Full Name</label>
+            <div class="input-with-icon">
+              <!-- Icon for the Full Name input field -->
+              <i class="far fa-user"></i>
+              <!-- Input field for full name with Angular two-way data binding -->
+              <input type="text" class="form-control" id="fullName" [(ngModel)]="fullName" name="fullName" required>
+            </div>
+          </div>
+          
+          <!-- User Name input field with associated label -->
+          <div class="mb-3">
+            <label for="userName" class="form-label">User Name</label>
+            <div class="input-with-icon">
+              <!-- Icon for the User Name input field -->
+              <i class="far fa-user"></i>
+              <!-- Input field for user name with Angular two-way data binding -->
+              <input type="text" class="form-control" id="userName" [(ngModel)]="userName" name="userName" required>
+            </div>
+          </div>
+          
+          <!-- Email input field with associated label -->
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <div class="input-with-icon">
+              <!-- Icon for the Email input field -->
+              <i class="far fa-envelope"></i>
+              <!-- Input field for email address with Angular two-way data binding -->
+              <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" required>
+            </div>
+            <!-- Conditional error message for invalid email -->
+            <div *ngIf="!isEmailValid" class="error-message">
+              Please enter a valid email address.
+            </div>
+          </div>
+          
+          <!-- Password input field with associated label -->
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <div class="input-with-icon">
+              <!-- Icon for the Password input field -->
+              <i class="fas fa-lock"></i>
+              <!-- Input field for password with Angular two-way data binding -->
+              <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password" required>
+            </div>
+          </div>
+          
+          <!-- Conditional error message for incomplete form -->
+          <div *ngIf="!isFormValid" class="error-message">
+            Please fill in all the fields.
+          </div>
+          
+          <!-- Conditional status message for signup results -->
+          <div *ngIf="signupStatus" class="login-status">
+            {{ signupStatus }}
+          </div>
+          
+          <!-- Submit button for the form -->
+          <button type="submit" class="btn btn-primary mb-2">
+            <!-- Icon for the submit button -->
+            <i class="fas fa-user-plus"></i> Sign Up
+          </button>
+        </form>
+        
+        <!-- Link to the login page for users who are already registered -->
+        <a routerLink="/login">Already registered? Click here to login</a>
+      </div>
+    </div>
+  </div>
+</div>

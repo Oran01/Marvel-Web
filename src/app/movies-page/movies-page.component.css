@@ -1,0 +1,247 @@
+/* Define a custom font for the component */
+@font-face {
+  src: url(../../assets/fonts/HeroesAssembleOutlineItalic-XOLZ.otf);
+  font-family: nos;
+}
+
+/* Global reset for margins, paddings, and box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure consistent box-sizing across all elements */
+html {
+  box-sizing: border-box;
+}
+html *, html *:before, html *:after, html *::before, html *::after {
+  box-sizing: inherit;
+}
+
+/* Styling for the banner section */
+.banner {
+  margin-top: 54px; /* Space above the banner */
+  width: 100%; /* Full width */
+  height: 45vh; /* Height is 45% of the viewport height */
+}
+
+/* Basic styling for the body element */
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif; /* Font family for the page */
+  background: #212025; /* Background color */
+  background: white; /* Fallback background color */
+}
+
+/* Container styling for movies section */
+.Movies {
+  width: 64%; /* Width of the container */
+  height: 100vh; /* Full viewport height */
+  position: relative; /* Position relative for child positioning */
+  margin: 0 auto; /* Center the container horizontally */
+  top: -100px; /* Adjust vertical position */
+}
+
+/* Styling for the slider containing movie slides */
+.slider {
+  width: 100%; /* Full width of the container */
+  height: 100vh; /* Full viewport height */
+  position: relative; /* Position relative for child positioning */
+  display: flex; /* Flexbox for layout */
+  transition: all 0.5s; /* Smooth transition for slide changes */
+  overflow: hidden; /* Hide overflowing content */
+  justify-content: center; /* Center slides horizontally */
+  align-items: center; /* Center slides vertically */
+  margin-top: calc(0vh + 60px); /* Margin to adjust vertical position */
+}
+
+/* Styling for individual slides in the slider */
+.slider .slide {
+  width: 35%; /* Width of each slide */
+  height: 50%; /* Height of each slide */
+  position: relative; /* Position relative for child positioning */
+  text-align: center; /* Center text inside slide */
+  transition: 0.5s; /* Smooth transition for hover effects */
+}
+
+/* Background images for each slide */
+.slider .slide:nth-child(1) {
+  background: url(../../assets/MovieImg/GaurdiansImg/guardians-of-the-galaxy-vol-three.jpg);
+  background-size: cover; /* Cover the entire slide */
+  background-repeat: no-repeat; /* Prevent repetition of background image */
+  background-position: left; /* Align background image to the left */
+}
+.slider .slide:nth-child(2) {
+  background: url(../../assets/MovieImg/AntManImg/ant-man-and-the-wasp-quantumania.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+}
+.slider .slide:nth-child(3) {
+  background: url(../../assets/MovieImg/PantherImg/black-panther-wakanda-forever.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+}
+.slider .slide:nth-child(4) {
+  background: url(../../assets/MovieImg/ThorImg/thor-love-and-thunder.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+}
+.slider .slide:nth-child(5) {
+  background: url(../../assets/MovieImg/DrStrangeImg/doctor-strange-in-the-multiverse-of-madness.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+}
+
+/* Hover effect for slides */
+.slider .slide:hover {
+  width: 80%; /* Increase width on hover */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+/* Container for movie cards */
+.container {
+  display: flex; /* Flexbox for layout */
+  flex-wrap: wrap; /* Allow wrapping of items */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  margin-top: -150px; /* Adjust vertical margin */
+  margin-left: auto; /* Center container horizontally */
+  margin-right: auto; /* Center container horizontally */
+  max-width: 1080px; /* Maximum width of the container */
+}
+
+/* Styling for individual movie cards */
+.card {
+  height: 350px; /* Height of the card */
+  width: 230px; /* Width of the card */
+  background: black; /* Background color */
+  border-radius: 10px; /* Rounded corners */
+  margin: 10px; /* Margin around the card */
+  overflow: hidden; /* Hide overflow content */
+  position: relative; /* Position relative for child positioning */
+  transition: all 0.2s; /* Smooth transition for hover effects */
+}
+
+/* Styling for images inside the card */
+.card img {
+  border-radius: 10px; /* Rounded corners */
+  height: 100%; /* Full height */
+  width: 100%; /* Full width */
+  transition: all 0.2s; /* Smooth transition for hover effects */
+}
+
+/* Styling for the info section of the card */
+.card .info {
+  width: 100%; /* Full width */
+  background: linear-gradient(to top, #000 70%, transparent); /* Gradient background */
+  position: absolute; /* Position absolute for placement */
+  bottom: -340px; /* Initially hidden below the card */
+  transition: all 0.2s; /* Smooth transition for hover effects */
+  color: white; /* Text color */
+  padding: 18px; /* Padding around the content */
+  padding-right: 10px; /* Additional padding on the right */
+}
+
+/* Hover effect for the info section */
+.card:hover .info {
+  bottom: 0; /* Show the info section on hover */
+  transition: all 0.2s; /* Smooth transition */
+}
+
+/* Top background of the card */
+.card .top-bg {
+  height: 50px; /* Height of the background */
+  width: 100%; /* Full width */
+  background: linear-gradient(to bottom, #000 4%, transparent); /* Gradient background */
+  position: absolute; /* Position absolute for placement */
+  top: 0px; /* Top position */
+  transition: all 0.2s; /* Smooth transition for hover effects */
+}
+
+/* Styling for movie name in the card info */
+.card .info .movie-name {
+  margin-top: 25px; /* Margin from the top */
+  font-size: 16px; /* Font size */
+}
+
+/* Styling for additional details in the card info */
+.card .info .oth-detail {
+  font-size: 9px; /* Font size */
+  margin-top: 10px; /* Margin from the top */
+  letter-spacing: 0.7px; /* Letter spacing */
+}
+
+/* Styling for description in the card info */
+.card .info .description {
+  font-size: 11px; /* Font size */
+  color: gray; /* Text color */
+  margin-top: 20px; /* Margin from the top */
+  color: white; /* Text color */
+  font-weight: 300; /* Font weight */
+}
+
+/* Styling for star rating in the card info */
+.card .info .stars {
+  margin-top: 7px; /* Margin from the top */
+  font-size: 10px; /* Font size */
+}
+
+/* Styling for individual stars in the rating */
+.card .info .stars i {
+  margin-left: 5px; /* Margin on the left */
+  position: relative; /* Position relative for placement */
+  left: -5px; /* Adjust position */
+}
+
+/* Color for the rating stars */
+.card .info .stars .rating {
+  color: #f3c23f; /* Star color */
+}
+
+/* Keyframes for text clipping animation */
+@keyframes textclip {
+  to {
+    background-position: 200% center; /* Animate background position */
+  }
+}
+
+/* Responsive styling for screens with a max width of 600px */
+@media only screen and (max-width: 600px) {
+  .Movies {
+    width: 80%; /* Increase width */
+    height: 100vh; /* Full viewport height */
+    position: relative;
+    margin: 0 auto; /* Center horizontally */
+    top: -100px; /* Adjust vertical position */
+  }
+
+  .banner {
+    width: 100%; /* Full width */
+    height: 45vh; /* Height is 45% of the viewport height */
+    margin-top: 13%; /* Adjust margin */
+  }
+}
+
+/* Responsive styling for screens between 768px and 786px */
+@media only screen and (min-width: 768px) and (max-width: 786px) {
+  .banner {
+    width: 100%; /* Full width */
+    height: 45vh; /* Height is 45% of the viewport height */
+    margin-top: 6%; /* Adjust margin */
+  }
+}
+
+/* Responsive styling for screens between 653px and 1368px */
+@media only screen and (min-width: 653px) and (max-width: 1368px) {
+  .banner {
+    width: 100%; /* Full width */
+    height: 45vh; /* Height is 45% of the viewport height */
+    margin-top: 8%; /* Adjust margin */
+  }
+}

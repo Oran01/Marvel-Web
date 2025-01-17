@@ -1,0 +1,226 @@
+/* Define a custom font for the navigation bar */
+@font-face{
+  src: url(../../assets/fonts/AvengeRegular-8MKVZ.otf);
+  font-family: king;
+}
+
+/* Reset default styles for all elements */
+*{
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  text-decoration: none; /* Remove text decoration */
+  list-style: none; /* Remove list bullets */
+}
+
+/* Style for the logo within the navigation bar */
+.logo{
+  line-height: 54px; /* Align logo vertically */
+  height: 54px; /* Set logo height */
+}
+
+/* Style for the navigation bar */
+nav{
+  height: 54px; /* Set navigation bar height */
+  width: 100%; /* Full width */
+  background: black; /* Background color */
+  position: fixed; /* Fixed position at the top */
+  z-index: 1000; /* High z-index to stay above other elements */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+}
+
+/* Style for the navigation menu list */
+nav ul{
+  float: right; /* Align menu to the right */
+  margin-right: 10px; /* Right margin */
+  font-family: king; /* Custom font */
+}
+
+/* Style for navigation menu items */
+nav li{
+  display: inline-block; /* Display items inline */
+  line-height: 54px; /* Align items vertically */
+}
+
+/* Style for navigation links */
+nav a{
+  color: white; /* Text color */
+  font-size: 20px; /* Font size */
+  text-transform: uppercase; /* Uppercase text */
+  border: 1px solid transparent; /* Transparent border by default */
+  padding: 7px 10px; /* Padding around text */
+  border-radius: 3px; /* Rounded corners */
+}
+
+/* Style for navigation links on hover */
+nav a:hover{
+  color: red; /* Change text color */
+  border: 1px solid red; /* Add red border */
+  transition: .5s; /* Smooth transition */
+}
+
+/* Style for the menu icon (for mobile view) */
+nav #icon{
+  color: white; /* Icon color */
+  font-size: 22px; /* Icon size */
+  line-height: 54px; /* Align icon vertically */
+  float: right; /* Align icon to the right */
+  margin-right: 20px; /* Right margin */
+  cursor: pointer; /* Pointer cursor on hover */
+  display: none; /* Hide by default */
+}
+
+/* Style for dropdown menu */
+.dropdown-menu {
+  display: none; /* Hide dropdown menu by default */
+  position: absolute; /* Position relative to parent */
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  border-radius: 16px; /* Rounded corners */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Shadow for dropdown */
+  backdrop-filter: blur(5px); /* Blur effect for background */
+  -webkit-backdrop-filter: blur(5px); /* Blur effect for WebKit browsers */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Border with slight transparency */
+  padding: 10px; /* Padding inside dropdown */
+  min-width: 100px; /* Minimum width */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for dropdown */
+}
+
+/* Style for showing the dropdown menu */
+.dropdown-menu.open {
+  display: block; /* Show dropdown menu */
+}  
+  
+/* Style for list items inside the dropdown menu */
+.dropdown-menu li {
+  margin-bottom: 5px; /* Bottom margin */
+}
+  
+/* Remove bottom margin for the last list item */
+.dropdown-menu li:last-child {
+ margin-bottom: 0;
+}
+  
+/* Style for links inside the dropdown menu */
+.dropdown-menu li a {
+  display: block; /* Block display */
+  padding: 5px; /* Padding around text */
+  color: #000; /* Text color */
+  text-decoration: none; /* Remove text decoration */
+  transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+/* Style for logout link in dropdown menu */
+.dropdown-menu li a.logout {
+  color: #000; /* Text color */
+}
+  
+/* Style for links inside the dropdown menu on hover */
+.dropdown-menu li a:hover {
+  background-color: transparent; /* No background color on hover */
+}
+
+/* Style for default avatar image */
+.default-avatar {
+  width: 35px; /* Width of the avatar */
+  height: 35px; /* Height of the avatar */
+  border-radius: 50%; /* Circular shape */
+}
+  
+/* Style for avatar image */
+.avatar-image{
+  width: 35px; /* Width of the avatar */
+  height: 35px; /* Height of the avatar */
+  border-radius: 50%; /* Circular shape */
+}
+
+/* Media query for screens smaller than 700px */
+@media (max-width: 700px){
+  /* Show menu icon */
+  nav #icon{
+    display: block; /* Display the icon */
+  }
+
+  /* Style for the navigation menu in mobile view */
+  nav ul{
+    margin-right: 0px; /* Remove right margin */
+    position: fixed; /* Fix position */
+    width: auto; /* Auto width */
+    height: 100vh; /* Full viewport height */
+    background-color: #ee1e25; /* Background color */
+    top: 54px; /* Position below the navigation bar */
+    right: -200px; /* Start off-screen to the right */
+    text-align: center; /* Center-align text */
+    transition: all .5s; /* Smooth transition for sliding effect */
+  }
+
+  /* Show the menu when 'show' class is added */
+  nav ul.show {
+    right: 0; /* Align to the right edge */
+  }
+
+  /* Style for list items in mobile view */
+  nav li{
+    display: block; /* Block display */
+  }
+
+  /* Style for navigation links in mobile view */
+  nav ul a{
+    padding: 25px; /* Increased padding */
+  }
+
+  /* Style for links on hover in mobile view */
+  a:hover{
+    border: none; /* Remove border on hover */
+    color: black; /* Change text color */
+    transition: .5s; /* Smooth transition */
+  }
+
+  /* Show the navigation menu when 'show' class is added */
+  ul.show {
+    display: block; /* Display the menu */
+  }
+
+  /* Style for dropdown menu in mobile view */
+  li.dropdown {
+    position: relative; /* Relative position for dropdown */
+  }
+
+  /* Style for dropdown menu items in mobile view */
+  li.dropdown ul.dropdown-menu {
+    display: none; /* Hide dropdown menu by default */
+    position: absolute; /* Absolute position */
+    top: 100%; /* Position below parent */
+    left: 0; /* Align to the left */
+    /*background-color: #ee1e25;*/ /* Uncomment to change background color */
+    width: 100%; /* Full width */
+  }
+
+  /* Show dropdown menu on hover */
+  li.dropdown:hover ul.dropdown-menu {
+    display: block; /* Show dropdown menu */
+  }
+
+  /* Style for list items in dropdown menu in mobile view */
+  li.dropdown ul.dropdown-menu li {
+    display: block; /* Block display */
+    margin-bottom: 0; /* Remove bottom margin */
+  }
+
+  /* Style for links inside dropdown menu in mobile view */
+  li.dropdown ul.dropdown-menu li a {
+    display: flex; /* Flex display */
+    align-items: center; /* Center-align items vertically */
+    justify-content: center; /* Center-align items horizontally */
+    padding: 5px; /* Padding around text */
+    color: white; /* Text color */
+    text-decoration: none; /* Remove text decoration */
+    transition: background-color 0.3s; /* Smooth background color transition */
+  }
+
+  /* Style for links on hover in mobile view */
+  nav a:hover{
+    color: #000; /* Change text color */
+    border: 1px solid #000; /* Add border on hover */
+    transition: .5s; /* Smooth transition */
+  }
+}

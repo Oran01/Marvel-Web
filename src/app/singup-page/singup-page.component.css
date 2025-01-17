@@ -1,0 +1,210 @@
+/* Global Styles */
+/* Apply the 'Poppins' font to all elements */
+* {
+  font-family: 'Poppins';
+}
+
+/* Body Styles */
+/* Center the body content vertically and horizontally, disable text selection, and hide vertical overflow */
+body {
+  user-select: none; /* Prevent text selection */
+  overflow-y: hidden; /* Hide vertical scroll */
+  display: flex; /* Use Flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full viewport height */
+}
+
+/* Container Styles */
+/* Center the content within the container using Flexbox */
+.container {
+  display: flex; /* Use Flexbox layout */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full viewport height */
+}
+
+/* Card Styles */
+/* Style for the card element that holds the form */
+.card {
+  background: #6190E8; /* Background color for the card */
+  background: -webkit-linear-gradient(to right, #A7BFE8, #6190E8); /* Gradient background for WebKit browsers */
+  background: linear-gradient(to right, #A7BFE8, #6190E8); /* Gradient background */
+  padding: 2em; /* Padding inside the card */
+  display: flex; /* Use Flexbox layout */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  border-radius: 30px; /* Rounded corners */
+  box-shadow: 0 0 2em hsl(231, 62%, 94%); /* Shadow effect for the card */
+  width: 350px; /* Fixed width for the card */
+}
+
+/* Card Header Styles */
+/* Style for the header inside the card */
+.card h1 {
+  color: hsl(231, 62%, 94%); /* Text color for the header */
+  margin-bottom: 1em; /* Space below the header */
+}
+
+/* Icon Styles */
+/* Style for icons inside labels and inputs */
+.card label i {
+  margin-right: 0.5em; /* Space between icon and label text */
+}
+
+/* Input Icon Styles */
+/* Style for icons placed inside input fields */
+.card input[type="text"] + i,
+.card input[type="password"] + i,
+.card input[type="email"] + i {
+  position: absolute; /* Position absolutely within the input container */
+  top: 50%; /* Center vertically */
+  left: 0.75em; /* Position from the left */
+  transform: translateY(-50%); /* Center vertically with respect to the icon */
+  color: #ccc; /* Default color for icons */
+}
+
+/* Input Icon Focus Styles */
+/* Change icon color when input is focused */
+.card input[type="text"]:focus + i,
+.card input[type="password"]:focus + i,
+.card input[type="email"]:focus + i {
+  color: #999; /* Color when input is focused */
+}
+
+/* Input Icon Active Styles */
+/* Change icon color when input is filled or focused */
+.card input[type="text"]:focus + i,
+.card input[type="password"]:focus + i,
+.card input[type="email"]:focus + i,
+.card input[type="text"]:not(:placeholder-shown) + i,
+.card input[type="password"]:not(:placeholder-shown) + i,
+.card input[type="email"]:not(:placeholder-shown) + i {
+  color: #333; /* Color when input is filled or focused */
+}
+
+/* Link Styles */
+/* Style for links inside the card */
+.card a {
+  color: white; /* Link text color */
+  margin-top: 10px; /* Space above the link */
+}
+
+/* Input Field Styles */
+/* Style for text, password, and email input fields */
+.card input[type="text"],
+.card input[type="password"],
+.card input[type="email"] {
+  width: 100%; /* Full width of the card */
+  padding: 0.5em; /* Padding inside the input fields */
+  margin-bottom: 1em; /* Space below each input field */
+  border: none; /* Remove default border */
+  border-radius: 4px; /* Rounded corners for input fields */
+  outline: none; /* Remove default outline */
+  background: hsl(0, 0%, 100%); /* Background color for input fields */
+  box-shadow: 0 0 2em hsl(231, 62%, 94%); /* Shadow effect for input fields */
+  color: hsl(0, 0%, 30%); /* Text color inside input fields */
+}
+
+/* Error Message Styles */
+/* Style for error messages displayed inside the card */
+.card .error-message {
+  color: #000; /* Text color for error messages */
+  margin-bottom: 1em; /* Space below the error message */
+}
+
+/* Login Status Styles */
+/* Style for login status messages displayed inside the card */
+.card .login-status {
+  color: #000; /* Text color for login status messages */
+  margin-bottom: 1em; /* Space below the login status message */
+}
+
+/* Button Styles */
+/* Style for buttons inside the card */
+.card button {
+  padding: 0.5em 1em; /* Padding inside the button */
+  background: #00c6ff; /* Background color for the button */
+  background: -webkit-linear-gradient(to right, #0072ff, #00c6ff); /* Gradient background for WebKit browsers */
+  background: linear-gradient(to right, #0072ff, #00c6ff); /* Gradient background */
+  color: white; /* Text color for the button */
+  border: none; /* Remove default border */
+  border-radius: 4px; /* Rounded corners for the button */
+  font-weight: 600; /* Bold text */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for background color change */
+}
+
+/* Button Hover Styles */
+/* Change button background color on hover */
+.card button:hover {
+  background-color: hsl(233, 66%, 37%); /* Darker background color on hover */
+}
+
+/* Input With Icon Styles */
+/* Style for input fields with icons */
+.card .input-with-icon {
+  position: relative; /* Position relative to contain the icon */
+}
+
+/* Input Padding for Icon */
+/* Add padding to the left of input fields to accommodate icons */
+.card .input-with-icon input {
+  padding-left: 2.5em; /* Space for the icon */
+}
+
+/* Icon Positioning */
+/* Position icon inside input fields */
+.card .input-with-icon i {
+  position: absolute; /* Absolute positioning for the icon */
+  top: 50%; /* Center vertically */
+  left: 0.65em; /* Position from the left */
+  transform: translateY(-50%); /* Center vertically with respect to the icon */
+  color: #ccc; /* Default color for icons */
+  pointer-events: none; /* Prevent icon from interfering with input events */
+}
+
+/* Media Queries */
+/* Adjust card styles for smaller screens (max-width: 300px) */
+@media only screen and (max-width: 300px) {
+  .card {
+    background: #6190E8; /* Background color for the card */
+    background: -webkit-linear-gradient(to right, #A7BFE8, #6190E8); /* Gradient background for WebKit browsers */
+    background: linear-gradient(to right, #A7BFE8, #6190E8); /* Gradient background */
+    padding: 2em; /* Padding inside the card */
+    display: flex; /* Use Flexbox layout */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    position: absolute; /* Absolute positioning for centering */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the card */
+    border-radius: 30px; /* Rounded corners */
+    box-shadow: 0 0 2em hsl(231, 62%, 94%); /* Shadow effect for the card */
+    width: 270px; /* Reduced width for smaller screens */
+  }
+}
+
+/* Adjust card styles for medium screens (min-width: 651px and max-width: 1024px) */
+@media only screen and (min-width: 651px) and (max-width: 1024px) {
+  .card {
+    background: #6190E8; /* Background color for the card */
+    background: -webkit-linear-gradient(to right, #A7BFE8, #6190E8); /* Gradient background for WebKit browsers */
+    background: linear-gradient(to right, #A7BFE8, #6190E8); /* Gradient background */
+    padding: 2em; /* Padding inside the card */
+    display: flex; /* Use Flexbox layout */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    position: absolute; /* Absolute positioning for centering */
+    overflow: auto; /* Allow scrolling if content overflows */
+    margin-top: 500%; /* Space above the card */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the card */
+    border-radius: 30px; /* Rounded corners */
+    box-shadow: 0 0 2em hsl(231, 62%, 94%); /* Shadow effect for the card */
+    width: 350px; /* Width for medium screens */
+  }
+}

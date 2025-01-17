@@ -1,0 +1,61 @@
+<!-- Meta tag for responsive design -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marvel</title>
+
+<!-- External resources for icons and fonts -->
+<script src="https://kit.fontawesome.com/92d42647e8.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Bruno+Ace&family=Chakra+Petch:wght@500&family=Rajdhani&display=swap" rel="stylesheet">
+
+<!-- Section One: Introduction to the MCU -->
+<section class="sectionOne">
+    <div class="text-box">
+        <h1>Join the MCU</h1>
+        <p>The Marvel Cinematic Universe (MCU) is a fantastical world where superheroes reign supreme and epic battles
+            take place on a regular basis. From Iron Man to Spider-Man and everyone in between, the MCU is a collection
+            of some of the coolest and most beloved characters in modern pop culture.<br><br>
+            But the MCU isn't just about action and adventure – it's also a place for hilarious one-liners, witty
+            banter, and laugh-out-loud moments.
+            <br>And let's not forget about the epic crossovers and team-ups that make every fan's heart skip a beat.
+            Whether it's the Avengers assembling for battle or the Guardians of the Galaxy blasting off into space, the
+            MCU is a place where anything is possible and the excitement never ends.<br>
+        <p>So, whether you're a die-hard fan or a newcomer to the world of superheroes, the MCU is guaranteed to bring a
+            smile to your face and a sense of wonder to your heart. Buckle up and get ready for the ride of a lifetime –
+            it's time to enter the Marvel Cinematic Universe!</p>
+    </div>
+</section>
+
+<!-- Section Two: Navigation to different sections -->
+<section class="sectionTwo">
+    <div class="row">
+        <a routerLink="/movies">
+            <div class="pages-col">
+                <img class="movieIcon" src="../../assets/HomeImg/movieIcon.png" alt="Movies Icon">
+                <h2>Movies</h2>
+            </div>
+        </a>
+        <a routerLink="/tv-shows">
+            <div class="pages-col">
+                <img class="tvShowIcon" src="../../assets/HomeImg/tvShowIcon.png" alt="TV Shows Icon">
+                <h2>Tv Shows</h2>
+            </div>
+        </a>
+        <a routerLink="/trivia">
+            <div class="pages-col">
+                <img class="triviaIcon" src="../../assets/HomeImg/triviaIcon.png" alt="Trivia Icon">
+                <h2>Trivia</h2>
+            </div>
+        </a>
+    </div>
+</section>
+
+<!-- Script for responsive menu icon -->
+<script>
+    const icon = document.querySelector('#icon');
+    const menu = document.querySelector('nav ul');
+
+    icon.addEventListener('click', () => {
+        menu.classList.toggle('show');
+    });
+</script>

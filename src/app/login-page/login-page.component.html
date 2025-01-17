@@ -1,0 +1,49 @@
+<!-- Include FontAwesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<div class="card">
+  <!-- Container for the card content -->
+  <div class="text-center">
+    <h1>Login</h1> <!-- Main heading for the login page -->
+  </div>
+
+  <!-- Form element with ngSubmit directive to bind form submission to the login method -->
+  <form (ngSubmit)="login()">
+    
+    <!-- User Name input section -->
+    <div class="mb-3">
+      <label for="userNameInput" class="form-label">User Name</label>
+      <div class="input-with-icon">
+        <i class="far fa-user"></i> <!-- FontAwesome user icon -->
+        <input type="text" class="form-control" id="userNameInput" [(ngModel)]="userName" name="userName">
+      </div>
+    </div>
+
+    <!-- Password input section -->
+    <div class="mb-3">
+      <label for="passwordInput" class="form-label">Password</label>
+      <div class="input-with-icon">
+        <i class="fas fa-lock"></i> <!-- FontAwesome lock icon -->
+        <input type="password" class="form-control" id="passwordInput" [(ngModel)]="password" name="password">
+      </div>
+    </div>
+
+    <!-- Error message displayed if form is not valid -->
+    <div *ngIf="!isFormValid" class="error-message">
+      Please fill in all the fields.
+    </div>
+
+    <!-- Login status message displayed if present -->
+    <div *ngIf="loginStatus" class="login-status">
+      {{ loginStatus }}
+    </div>
+
+    <!-- Submit button with FontAwesome icon -->
+    <button type="submit" class="btn btn-primary">
+      <i class="fas fa-sign-in"></i> Login
+    </button>
+  </form>
+
+  <!-- Link to the sign-up page -->
+  <a routerLink="/signup">New user? Click here to sign up</a>
+</div>

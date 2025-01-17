@@ -1,0 +1,84 @@
+<!-- Meta tags for responsive design and character encoding -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Trivia </title>
+
+<!-- External script and stylesheet links for icons and fonts -->
+<script src="https://kit.fontawesome.com/92d42647e8.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link
+  href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Bruno+Ace&family=Chakra+Petch:wght@500&family=Rajdhani&display=swap"
+  rel="stylesheet">
+
+<!-- Notification section for displaying alerts and messages -->
+<div *ngIf="notifications.length > 0" class="notifications">
+  <div *ngFor="let notification of notifications" class="notification" [ngClass]="notification.type">
+    <i [ngClass]="notification.icon"></i>
+    <span>{{ notification.text }}</span>
+  </div>
+</div>
+
+<!-- Section One: Banner or introductory section -->
+<section class="sectionOne">
+  <div class="container">
+    <a class="btn" routerLink="/leaderboard">LeaderBoard</a>
+    <!-- Button to navigate to the leaderboard page -->
+  </div>
+</section>
+
+<!-- Section Mid: Spacer section (if needed) -->
+<section class="sectionMid"></section>
+
+<!-- Section Two: Main content section containing quiz elements -->
+<section class="sectionTwo">
+  <!-- Quiz container displayed conditionally -->
+  <div id="quiz-container" *ngIf="showQuizContainer">
+    <!-- Question container -->
+    <div class="questions">
+      <h2 id="question">{{ question }}</h2> <!-- Display current question -->
+      <div id="image-container">
+        <img id="image" [src]="image" alt="Question Image">
+        <!-- Display image associated with the question -->
+      </div>
+      <ol type="A">
+        <li class="option" *ngFor="let opt of options; let i = index" (click)="calcScore(i)">
+          <span id="option{{i}}">{{ opt }}</span>
+          <!-- Display multiple-choice options -->
+        </li>
+      </ol>
+      <h4 id="stat"></h4> <!-- Placeholder for status messages -->
+      <h2 id="question">Question {{ currentQuestionIndex + 1 }} of {{ questionBank.length }}</h2>
+      <!-- Display current question number and total questions -->
+    </div>
+    <div class="buttons">
+      <button type="button" class="next" (click)="nextQuestion()">Next</button>
+      <!-- Button to proceed to the next question -->
+    </div>
+  </div>
+
+  <!-- Scoreboard section displayed conditionally -->
+  <div id="scoreboard" [class.show]="showScoreboard">
+    <h2 id="score-title">Your Score</h2>
+    <h2 id="score">{{ score }}</h2>
+    <!-- Display the user's score -->
+    <button type="button" id="score-btn-answers" (click)="restartQuiz()">Back to Quiz</button>
+    <button type="button" id="check-answer-btn" (click)="checkAnswers()">Check Answers</button>
+    <button type="button" id="add-score-btn" (click)="addOrUpdateScore()">Add/Update Score</button>
+    <!-- Buttons to restart the quiz, check answers, or add/update score -->
+  </div>
+
+  <!-- Answer bank section displayed conditionally -->
+  <div id="answerBank" [class.show]="showAnswerBank && showAnswerBoard" class="answerBank">
+    <h2>Answers:</h2>
+    <ol type="1" id="answers">
+      <li *ngFor="let answer of questionBank; let i = index">{{ answer.question }}: {{ answer.answer }}</li>
+      <!-- Display correct answers for each question -->
+    </ol>
+    <button type="button" id="score-btn-answers" (click)="restartQuiz()">Back to Quiz</button>
+    <!-- Button to return to the quiz -->
+  </div>
+</section>
+
+<!-- Section Three: Additional content or footer section (if needed) -->
+<section class="sectionThree"></section>

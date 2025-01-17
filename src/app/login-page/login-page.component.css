@@ -1,0 +1,163 @@
+* {
+  font-family: 'Poppins'; /* Set the global font family */
+}
+
+body {
+  user-select: none; /* Disable text selection */
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  display: flex; /* Use flexbox layout */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full viewport height */
+}
+
+.card {
+  background: #6190E8; /* Gradient background */
+  background: -webkit-linear-gradient(to right, #A7BFE8, #6190E8);
+  background: linear-gradient(to right, #A7BFE8, #6190E8);
+  padding: 2em; /* Padding inside the card */
+  display: flex; /* Use flexbox layout */
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  position: absolute; /* Absolute positioning */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for center alignment */
+  border-radius: 30px; /* Rounded corners */
+  box-shadow: 0 0 2em hsl(231, 62%, 94%); /* Box shadow for depth */
+  width: 350px; /* Set width */
+}
+
+.card h1 {
+  color: hsl(231, 62%, 94%); /* Text color */
+  margin-bottom: 1em; /* Margin below heading */
+}
+
+.card label i {
+  margin-right: 0.5em; /* Margin to the right of icons in labels */
+}
+
+.card input[type="text"] + i,
+.card input[type="password"] + i {
+  position: absolute; /* Position icons absolutely */
+  top: 50%; /* Center vertically */
+  left: 0.75em; /* Left offset */
+  transform: translateY(-50%); /* Adjust for center alignment */
+  color: #ccc; /* Icon color */
+}
+
+.card input[type="text"]:focus + i,
+.card input[type="password"]:focus + i {
+  color: #999; /* Change icon color on input focus */
+}
+
+.card input[type="text"]:focus + i,
+.card input[type="password"]:focus + i,
+.card input[type="text"]:not(:placeholder-shown) + i,
+.card input[type="password"]:not(:placeholder-shown) + i {
+  color: #333; /* Darken icon color when input has value */
+}
+
+.card a {
+  color: white; /* Link color */
+  margin-top: 10px; /* Margin above links */
+}
+
+.card input[type="text"],
+.card input[type="password"] {
+  width: 100%; /* Full width */
+  padding: 0.5em; /* Padding inside input fields */
+  margin-bottom: 1em; /* Margin below inputs */
+  border: none; /* No border */
+  border-radius: 4px; /* Rounded corners */
+  outline: none; /* Remove outline on focus */
+  background: hsl(0, 0%, 100%); /* White background */
+  box-shadow: 0 0 2em hsl(231, 62%, 94%); /* Box shadow for depth */
+  color: hsl(0, 0%, 30%); /* Dark text color */
+}
+
+.card .error-message {
+  color: #000; /* Error message color */
+  margin-bottom: 1em; /* Margin below error message */
+}
+
+.card .login-status {
+  color: #000; /* Login status message color */
+  margin-bottom: 1em; /* Margin below login status message */
+}
+
+.card button {
+  padding: 0.5em 1em; /* Padding inside button */
+  background: #00c6ff; /* Gradient background */
+  background: -webkit-linear-gradient(to right, #0072ff, #00c6ff);
+  background: linear-gradient(to right, #0072ff, #00c6ff);
+  color: white; /* Text color */
+  border: none; /* No border */
+  border-radius: 4px; /* Rounded corners */
+  font-weight: 600; /* Bold text */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.card button:hover {
+  background-color: hsl(233, 66%, 37%); /* Darken background on hover */
+}
+
+.card .input-with-icon {
+  position: relative; /* Position relative for icon positioning */
+}
+
+.card .input-with-icon i {
+  position: absolute; /* Position icons absolutely */
+  top: 50%; /* Center vertically */
+  left: 0.65em; /* Left offset */
+  transform: translateY(-50%); /* Adjust for center alignment */
+  color: #ccc; /* Icon color */
+  pointer-events: none; /* Prevent icon from capturing mouse events */
+}
+
+.card .input-with-icon input {
+  padding-left: 2.5em; /* Add padding to make space for icon */
+}
+
+@media only screen and (max-width: 300px) {
+  .card {
+    background: #6190E8; /* Same gradient background */
+    background: -webkit-linear-gradient(to right, #A7BFE8, #6190E8);
+    background: linear-gradient(to right, #A7BFE8, #6190E8);
+    padding: 2em; /* Same padding */
+    display: flex; /* Same flexbox layout */
+    flex-direction: column; /* Same vertical stacking */
+    justify-content: center; /* Same vertical centering */
+    align-items: center; /* Same horizontal centering */
+    position: absolute; /* Same absolute positioning */
+    top: 50%; /* Same vertical centering */
+    left: 50%; /* Same horizontal centering */
+    transform: translate(-50%, -50%); /* Same centering adjustment */
+    border-radius: 30px; /* Same rounded corners */
+    box-shadow: 0 0 2em hsl(231, 62%, 94%); /* Same box shadow */
+    width: 270px; /* Adjust width for small screens */
+  }
+}
+
+@media only screen and (min-width: 651px) and (max-width: 1000px) {
+  .card {
+    background: #6190E8; /* Same gradient background */
+    background: -webkit-linear-gradient(to right, #A7BFE8, #6190E8);
+    background: linear-gradient(to right, #A7BFE8, #6190E8);
+    padding: 2em; /* Same padding */
+    display: flex; /* Same flexbox layout */
+    flex-direction: column; /* Same vertical stacking */
+    justify-content: center; /* Same vertical centering */
+    align-items: center; /* Same horizontal centering */
+    position: absolute; /* Same absolute positioning */
+    overflow: auto; /* Allow content to scroll if necessary */
+    top: 70%; /* Adjust top position */
+    left: 50%; /* Same horizontal centering */
+    transform: translate(-50%, -50%); /* Same centering adjustment */
+    border-radius: 30px; /* Same rounded corners */
+    box-shadow: 0 0 2em hsl(231, 62%, 94%); /* Same box shadow */
+    width: 350px; /* Same width */
+  }
+}

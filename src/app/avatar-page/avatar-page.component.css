@@ -1,0 +1,59 @@
+/* Container styling */
+.container {
+  margin-top: 100px;
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  border-radius: 16px; /* Rounded corners */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle box shadow for depth */
+  backdrop-filter: blur(5px); /* Blur effect for background */
+  -webkit-backdrop-filter: blur(5px); /* Blur effect for Safari */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Border with transparency */
+  max-width: 750px; /* Maximum width of the container */
+}
+
+/* Avatar options and heading styling */
+.avatar-options, h2 {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  gap: 15px; /* Space between items */
+  margin: 0 auto; /* Center the avatar options horizontally */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+}
+
+/* Individual avatar option styling */
+.avatar-option {
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: transform 0.3s ease; /* Smooth transform transition */
+}
+
+/* Avatar image styling */
+.avatar-option img {
+  width: 100px; /* Set width of avatar images */
+  height: 100px; /* Set height of avatar images */
+  border-radius: 50%; /* Make avatar images circular */
+}
+
+/* Avatar option hover effect */
+.avatar-option:hover {
+  transform: scale(1.1); /* Slightly enlarge the avatar on hover */
+}
+
+/* Heading styling */
+h2 {
+  color: whitesmoke; /* Light color for the heading text */
+  font: 800 26px/3vw RobotoCondensed, Trebuchet MS, Helvetica, Arial, sans-serif; /* Font styling */
+  letter-spacing: 1px; /* Space between letters */
+  text-transform: uppercase; /* Make all letters uppercase */
+  line-height: 11vh; /* Line height for vertical spacing */
+}
+
+/* Section one styling (background) */
+.sectionOne {
+  min-height: 100vh; /* Ensure section takes full viewport height */
+  width: 100%; /* Full width */
+  background-image: url(../../assets/Cover/avengers.jpg); /* Background image */
+  background-position: center; /* Center the background image */
+  background-size: cover; /* Cover the entire section with the image */
+  position: absolute; /* Absolute positioning */
+  z-index: 0; /* Set stacking order */
+}

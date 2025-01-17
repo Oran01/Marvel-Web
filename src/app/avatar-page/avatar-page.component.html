@@ -1,0 +1,19 @@
+<!-- Main section with background styling -->
+<section class="sectionOne">
+  <!-- Container for the avatar selection area -->
+  <div class="container">
+    <!-- Heading for the avatar selection section -->
+    <h2>Avatar Selection</h2>
+    
+    <!-- Container for avatar options -->
+    <div class="avatar-options">
+      <!-- Loop through avatar options and display each as an avatar-option -->
+      <!-- *ngFor directive creates a list of avatar-option elements from avatarOptions array -->
+      <!-- (click) binding calls handleAvatarSelection when an avatar is clicked -->
+      <div class="avatar-option" *ngFor="let avatarUrl of avatarOptions" (click)="handleAvatarSelection(avatarUrl)">
+        <!-- Bind the src attribute of img tag to avatarUrl -->
+        <img [src]="avatarUrl" alt="Avatar">
+      </div>
+    </div>
+  </div>
+</section>

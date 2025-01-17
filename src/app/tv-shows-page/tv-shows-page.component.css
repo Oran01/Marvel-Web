@@ -1,0 +1,251 @@
+/* Import custom font for headings */
+@font-face {
+  src: url(../../assets/fonts/HeroesAssembleOutlineItalic-XOLZ.otf);
+  font-family: nos;
+}
+
+/* General reset for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure consistent box-sizing for all elements and pseudo-elements */
+html {
+  box-sizing: border-box;
+}
+html *, html *:before, html *:after, html *::before, html *::after {
+  box-sizing: inherit;
+}
+
+/* Styling for the banner image */
+.banner {
+  width: 100%;
+  height: 45vh;
+  margin-top: 3%;
+}
+
+/* Global body styles */
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: #212025;
+  background: white; /* Fallback for browsers without gradient support */
+}
+
+/* Styling for the main container of TV shows */
+.TvShows {
+  width: 64%;
+  height: 100vh;
+  position: relative;
+  margin: 0 auto;
+  top: -100px;
+}
+
+/* Slider container for TV show slides */
+.slider {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  transition: all 0.5s;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  margin-top: calc(0vh + 60px);
+}
+
+/* Individual slide styling */
+.slider .slide {
+  width: 35%;
+  height: 50%;
+  position: relative;
+  text-align: center;
+  transition: 0.5s;
+}
+
+/* Specific styling for each slide with background images */
+.slider .slide:nth-child(1) {
+  background: url(../../assets/TvShowsImg/iAmGroot.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+}
+.slider .slide:nth-child(2) {
+  background: url(../../assets/TvShowsImg/werewolfByNight.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+}
+.slider .slide:nth-child(3) {
+  background: url(../../assets/TvShowsImg/secretInvasion.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+}
+.slider .slide:nth-child(4) {
+  background: url(../../assets/TvShowsImg/sheHulk.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+}
+.slider .slide:nth-child(5) {
+  background: url(../../assets/TvShowsImg/theGaurdiansHoliday.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+}
+
+/* Hover effect on slides */
+.slider .slide:hover {
+  width: 80%;
+  cursor: pointer;
+}
+
+/* Container for cards displaying TV shows */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: -150px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1080px;
+}
+
+/* Card styling for individual TV shows */
+.card {
+  height: 350px;
+  width: 230px;
+  background: black;
+  border-radius: 10px;
+  margin: 10px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.2s;
+}
+
+/* Styling for images inside cards */
+.card img {
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  transition: all 0.2s;
+}
+
+/* Information overlay for cards */
+.card .info {
+  width: 100%;
+  background: linear-gradient(to top, #000 70%, transparent);
+  position: absolute;
+  bottom: -340px;
+  transition: all 0.2s;
+  color: white;
+  padding: 18px;
+  padding-right: 10px;
+}
+
+/* Show info on hover */
+.card:hover .info {
+  bottom: 0;
+  transition: all 0.2s;
+}
+
+/* Top background overlay effect for cards */
+.card .top-bg {
+  height: 50px;
+  width: 100%;
+  background: linear-gradient(to bottom, #000 4%, transparent);
+  position: absolute;
+  top: 0px;
+  transition: all 0.2s;
+}
+
+/* Styling for TV show name inside the info */
+.card .info .tvshow-name {
+  margin-top: 25px;
+  font-size: 16px;
+}
+
+/* Other details text inside the info */
+.card .info .oth-detail {
+  font-size: 9px;
+  margin-top: 10px;
+  letter-spacing: 0.7px;
+}
+
+/* Description text styling */
+.card .info .description {
+  font-size: 11px;
+  color: white;
+  margin-top: 20px;
+  font-weight: 300;
+}
+
+/* Stars rating styling */
+.card .info .stars {
+  margin-top: 7px;
+  font-size: 10px;
+}
+
+.card .info .stars i {
+  margin-left: 5px;
+  position: relative;
+  left: -5px;
+}
+
+.card .info .stars .rating {
+  color: #f3c23f;
+}
+
+/* Styling for the container of TV show cards */
+.cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: -40px;
+}
+
+/* Animation keyframes for text clipping effect */
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Responsive styles for smaller screens */
+@media only screen and (max-width : 600px) {
+  .TvShows {
+    width: 80%;
+    height: 100vh;
+    position: relative;
+    margin: 0 auto;
+    top: -100px;
+  }
+
+  .banner {
+    width: 100%;
+    height: 45vh;
+    margin-top: 13%;
+  }
+}
+
+@media only screen and (min-width : 768px) and (max-width : 786px) {
+  .banner {
+    width: 100%;
+    height: 45vh;
+    margin-top: 6%;
+  }
+}
+
+@media only screen and (min-width : 653px) and (max-width : 1368px) {
+  .banner {
+    width: 100%;
+    height: 45vh;
+    margin-top: 8%;
+  }
+}

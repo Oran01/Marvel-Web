@@ -1,0 +1,63 @@
+<!-- HTML document for the Movies page component -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta charset declaration for character encoding -->
+  <meta charset="UTF-8">
+  <!-- Title of the page displayed in the browser tab -->
+  <title> Movies </title>
+  <!-- Font Awesome library for icons -->
+  <script src="https://kit.fontawesome.com/92d42647e8.js" crossorigin="anonymous"></script>
+  <!-- Favicon for the page -->
+  <link rel="shortcut icon" type="x-icon" href="../../assets/logoImg/mLogo.png">
+  <!-- jQuery library for JavaScript functionality (if needed) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Font Awesome CSS library for additional icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+  <!-- Main content wrapper -->
+  <div>
+    <!-- Banner image displayed at the top of the page -->
+    <img src="../../assets/MovieImg/banner.png" alt="banner" class="banner">
+  </div>
+
+  <!-- Header section containing the movie slider -->
+  <header class="Movies">
+    <!-- Slider containing movie slide elements with navigation links -->
+    <ul class="slider">
+      <!-- Each slide element with a corresponding router link -->
+      <i class="slide s1" routerLink="/guardians"></i>
+      <i class="slide s2" routerLink="/ant-man"></i>
+      <i class="slide s3" routerLink="/black-panther"></i>
+      <i class="slide s4" routerLink="/thor"></i>
+      <i class="slide s5" routerLink="/doctor-strange"></i>
+    </ul>
+  </header>
+
+  <!-- Container for displaying movie cards -->
+  <div class="container">
+    <!-- Loop through each movie and create a card for it -->
+    <div class="card" *ngFor="let movie of movies">
+      <!-- Image of the movie -->
+      <img [src]="movie.image" class="spidimg">
+      <!-- Background overlay on top of the image -->
+      <div class="top-bg"></div>
+      <!-- Information section of the movie card -->
+      <div class="info">
+        <!-- Movie name -->
+        <h3 class="movie-name">{{ movie.name }}</h3>
+        <!-- Additional details of the movie -->
+        <p class="oth-detail">{{ movie.age }} | {{ movie.time }} | {{ movie.geners }} | {{ movie.year }}</p>
+        <!-- Description of the movie -->
+        <p class="description">{{ movie.description }}.</p>
+        <!-- Stars rating of the movie -->
+        <div class="stars">
+          <!-- Loop through each star class and display star icons -->
+          <i class="{{ starClass }}" *ngFor="let starClass of getStarsArray(movie.stars)"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!-- Meta information and external resources -->
+<meta charset="UTF-8">
+<title>TV Shows</title>
+<!-- FontAwesome for icons -->
+<script src="https://kit.fontawesome.com/92d42647e8.js" crossorigin="anonymous"></script>
+<!-- jQuery library -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- FontAwesome CSS for icons styling -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+<!-- Banner image at the top of the TV shows page -->
+<div>
+  <img src="../../assets/TvShowsImg/banner.jpg" alt="banner" class="banner">
+</div>
+
+<!-- Header section containing the TV shows slider -->
+<header class="TvShows">
+  <!-- Slider containing navigation to specific TV show pages -->
+  <ul class="slider">
+    <i class="slide s1" routerLink="/i-am-groot"></i>
+    <i class="slide s2" routerLink="/werenights"></i>
+    <i class="slide s3" routerLink="/secretinvasion"></i>
+    <i class="slide s4" routerLink="/shehulk"></i>
+    <i class="slide s5" routerLink="/gaurdholiday"></i>
+  </ul>
+</header>
+
+<!-- Container holding individual TV show cards -->
+<div class="container">
+  <!-- Loop through the tvShows array to display each show -->
+  <div class="card" *ngFor="let tvShow of tvShows">
+    <!-- TV show image -->
+    <img [src]="tvShow.image" class="spidimg">
+    <!-- Background overlay effect -->
+    <div class="top-bg"></div>
+    <!-- Information section for each TV show -->
+    <div class="info">
+      <!-- TV show name -->
+      <h3 class="tvshow-name">{{ tvShow.name }}</h3>
+      <!-- Additional details about the TV show -->
+      <p class="oth-detail">{{ tvShow.geners }} | {{ tvShow.year }} | {{ tvShow.episodes }} | {{ tvShow.time }}</p>
+      <!-- Short description of the TV show -->
+      <p class="description">{{ tvShow.description }}</p>
+      <!-- Star ratings for the TV show -->
+      <div class="stars">
+        <i class="{{ starClass }}" *ngFor="let starClass of getStarsArray(tvShow.stars)"></i>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,347 @@
+@font-face {
+  src: url(../../assets/fonts/HeroesAssembleOutlineItalic-XOLZ.otf);
+  font-family: nos;
+}
+
+/* Importing a custom font for consistent typography */
+@import url("https://fonts.googleapis.com/css?family=Inconsolata");
+
+/* Resetting default styles */
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+/* Setting the overall font and background styling for the page */
+body {
+  font-family: 'Chakra Petch', sans-serif;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+/* Styling for the banner section */
+.sectionOne {
+  height: 400px;
+  top: 54px;
+  background-image: url(../../assets/TriviaImg/marvelTrivia.png);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 0;
+  margin-bottom: 45px;
+}
+
+/* Styling for the main content section */
+.sectionTwo {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  padding-top: 100px;
+  height: 400px;
+  background-color: white;
+}
+
+/* Styling for the questions container */
+.questions {
+  margin: 3rem auto;
+  width: 90vw;
+  padding: 2rem;
+  background: linear-gradient(0deg, #CF7983, #794269);
+  cursor: default;
+  border-radius: 10px;
+}
+
+/* Styling for the question text */
+#question {
+  margin-bottom: 1rem;
+}
+
+/* Styling for the images associated with questions */
+#image {
+  width: 300px;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+/* Styling for the option buttons */
+.option {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  border-bottom: solid 0.1rem blue;
+  width: 15rem;
+  background: white;
+  border-radius: 10px;
+}
+
+/* Hover effect for options */
+.option:hover {
+  color: blue;
+}
+
+/* Styling for the list of options */
+ol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0 1.5rem;
+  color: black;
+  border-radius: 10px;
+}
+
+/* Styling for individual list items */
+ol li {
+  text-align: center;
+  display: block;
+}
+
+/* Styling for the span elements within list items */
+span {
+  display: block;
+  padding: 0.1rem 0.7rem;
+  border-radius: 1rem;
+}
+
+/* Styling for the answer display */
+#answer {
+  margin-top: 2.5rem;
+  text-align: left;
+}
+
+/* Styling for status messages */
+#stat {
+  margin-top: 1.5rem;
+  color: black;
+}
+
+/* Centering the buttons */
+.buttons {
+  text-align: center;
+}
+
+/* Styling for the button elements */
+button {
+  padding: 0.2rem 1.5rem;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  border-radius: 1.5rem;
+  color: black;
+  background: linear-gradient(0deg, #CF7983, #794269);
+}
+
+/* Active state styling for buttons */
+.button:active {
+  background: linear-gradient(0deg, #CF7983, #794269);
+  color: white;
+}
+
+/* Styling for the scoreboard and answer bank sections */
+#scoreboard, #answerBank {
+  width: 20rem;
+  background: linear-gradient(0deg, #CF7983, #794269);
+  padding: 2rem;
+  margin: auto;
+  position: relative;
+  top: 0rem;
+  display: none;
+  border-radius: 10px;
+}
+
+/* Styling for the scoreboard title */
+#score-title {
+  margin: 1rem 0;
+}
+
+/* Styling for buttons in the scoreboard */
+#score-btn, #check-answer {
+  margin-top: 1rem;
+  background: white;
+  color: black;
+  border-bottom: solid 0.1rem blue;
+}
+
+/* Styling for the score display */
+#score {
+  font-size: 2.5rem;
+}
+
+/* Styling for individual answers in the answer bank */
+#answerBank li {
+  margin-bottom: 0.2rem;
+  font-size: larger;
+}
+
+/* Styling for the answers section */
+#answers {
+  text-align: left;
+  margin-top: 1rem;
+}
+
+/* Showing scoreboard and answer bank when class 'show' is applied */
+#scoreboard.show, #answerBank.show {
+  display: block;
+}
+
+/* Styling for correct answers */
+.correct {
+  background-color: green;
+}
+
+/* Styling for wrong answers */
+.wrong {
+  background-color: red;
+}
+
+/* Initially hiding the answer bank */
+#answerBank {
+  display: none;
+}
+
+/* Additional styling for the answer bank */
+.answerBank {
+  width: 20rem;
+  background: linear-gradient(0deg, #CF7983, #794269);
+  padding: 2rem;
+  margin: auto;
+  position: relative;
+  top: 5rem;
+  display: none;
+  border-radius: 10px;
+}
+
+/* Styling for the custom button */
+.btn {
+  position: absolute;
+  bottom: -65px;
+  right: 1%;
+  color: #101832;
+  cursor: pointer;
+  display: inline-block;
+  letter-spacing: 0.075em;
+  padding: .8em 1em;
+  text-transform: uppercase;
+  border: 3px #00bcdd solid;
+  border-image: linear-gradient(45deg, #00bcdd 0%, #ff00ff 100%);
+  border-image-slice: 1 1 0 0;
+  z-index: 1;
+  box-shadow: -0.5em 0.5em rgba(16, 24, 50, 0);
+  transform-origin: left bottom;
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  -o-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+/* Styling for button before and after pseudo-elements */
+.btn:before, .btn:after {
+  border: 3px #00bcdd solid;
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: -1;
+}
+
+/* Additional styling for the button before pseudo-element */
+.btn:before {
+  border-image: linear-gradient(45deg, #00bcdd 0%, #0097dd 100%);
+  border-image-slice: 1 1 0 1;
+  left: -0.59em;
+  top: .15em;
+  width: .31em;
+  height: 100%;
+  transform: skewY(-45deg);
+}
+
+/* Additional styling for the button after pseudo-element */
+.btn:after {
+  border-image: linear-gradient(45deg, #00bcdd 0%, #ff00ff 100%);
+  border-image-slice: 1 1 1 0;
+  bottom: -0.61em;
+  right: 0.16em;
+  width: 100%;
+  height: .31em;
+  transform: skewX(-45deg);
+}
+
+/* Hover effect for the button */
+.btn:hover {
+  background-color: white;
+  background-size: 90%;
+  transform: translate(0.5em, -0.5em);
+  box-shadow: -1em 1em 0.15em rgba(16, 24, 50, 0.1);
+}
+
+/* Additional hover effect for the button before pseudo-element */
+.btn:hover:before {
+  background-size: 100%;
+  background-image: -moz-linear-gradient(45deg, #00bcdd 0%, #0097dd 100%);
+  background-image: -webkit-linear-gradient(45deg, #00bcdd 0%, #0097dd 100%);
+  background-image: linear-gradient(45deg, #00bcdd 0%, #0097dd 100%);
+  height: calc(100% - .13em);
+  border-image-slice: 1;
+}
+
+/* Additional hover effect for the button after pseudo-element */
+.btn:hover:after {
+  background-size: 100%;
+  background-image: -moz-linear-gradient(45deg, #00bcdd 0%, #ff00ff 100%);
+  background-image: -webkit-linear-gradient(45deg, #00bcdd 0%, #ff00ff 100%);
+  background-image: linear-gradient(45deg, #00bcdd 0%, #ff00ff 100%);
+  width: calc(100% - .13em);
+  border-image-slice: 1;
+}
+
+/* Styling for the notification container */
+.notifications {
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  z-index: 1;
+}
+
+/* Styling for individual notifications */
+.notification {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Styling for informational notifications */
+.notification.info {
+  background-color: #cce5ff;
+  color: #004085;
+}
+
+/* Styling for error notifications */
+.notification.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Styling for warning notifications */
+.notification.warning {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+/* Styling for success notifications */
+.notification.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+/* Styling for icons within notifications */
+.notification i {
+  margin-right: 8px;
+}

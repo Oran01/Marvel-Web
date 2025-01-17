@@ -1,0 +1,174 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+body {
+  min-height: 450px; /* Minimum height for the body */
+  height: 100vh; /* Full viewport height */
+  margin: 0; /* Remove default margin */
+  color: #fff; /* White text color */
+  font-family: "Open Sans", sans-serif; /* Set font family */
+  overflow: hidden; /* Prevent scrolling */
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 60vh; /* 60% of viewport height */
+  margin-top: 45px; /* Space above the banner */
+}
+
+.leaderboard {
+  position: absolute;
+  top: calc(75% + 20px); /* Positioned below the banner */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center alignment */
+  width: 285px; /* Fixed width */
+  max-width: 90%; /* Max width of 90% */
+  height: auto;
+  background: linear-gradient(to bottom, #3a404d, #181c26); /* Background gradient */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 7px 30px rgba(62, 9, 11, 0.3); /* Shadow for depth */
+}
+
+.leaderboard h1 {
+  font-size: 18px; /* Font size for heading */
+  color: #e1e1e1; /* Light gray text color */
+  padding: 12px 13px 18px; /* Padding for heading */
+}
+
+.leaderboard h1 .ico-cup {
+  width: 30px;
+  height: 31px;
+  margin-bottom: -5px; /* Align with text */
+  margin-right: 6px;
+}
+
+.leaderboard h1 svg {
+  width: 25px;
+  height: 26px;
+  position: relative;
+  top: 3px;
+  margin-right: 6px;
+  vertical-align: baseline;
+}
+
+.leaderboard ol {
+  counter-reset: leaderboard; /* Reset the counter for list items */
+  padding: 0;
+  margin: 0;
+}
+
+.leaderboard ol li {
+  position: relative;
+  z-index: 1;
+  font-size: 14px; /* Font size for list items */
+  counter-increment: leaderboard; /* Increment the counter */
+  padding: 18px 10px 18px 50px; /* Padding for list items */
+  cursor: pointer; /* Pointer cursor on hover */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0) scale(1, 1); /* Prevents flickering on hover */
+  list-style-type: none; /* No bullets */
+}
+
+.leaderboard ol li::before {
+  content: counter(leaderboard); /* Display the counter value */
+  position: absolute;
+  z-index: 2;
+  top: 15px;
+  left: 15px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  color: #c24448; /* Text color */
+  background: #fff; /* Background color */
+  border-radius: 20px; /* Circle shape */
+  text-align: center; /* Centered text */
+}
+
+.leaderboard ol li mark {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 18px 10px 18px 50px;
+  margin: 0;
+  background: none; /* No background */
+  color: #fff; /* White text */
+}
+
+.leaderboard ol li mark::before,
+.leaderboard ol li mark::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: -11px;
+  left: -9px;
+  border-top: 10px solid #c24448; /* Arrow tip color */
+  border-left: 10px solid transparent; /* Transparent left border */
+  transition: all 0.1s ease-in-out; /* Transition effect */
+  opacity: 0; /* Hidden by default */
+}
+
+.leaderboard ol li mark::after {
+  left: auto;
+  right: -9px;
+  border-left: none;
+  border-right: 10px solid transparent; /* Transparent right border */
+}
+
+.leaderboard ol li small {
+  position: relative;
+  z-index: 2;
+  display: block;
+  text-align: right; /* Right-aligned text */
+}
+
+.leaderboard ol li::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fa6855; /* Background color on hover */
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.08); /* Slight shadow for depth */
+  transition: all 0.3s ease-in-out; /* Smooth transition */
+  opacity: 0; /* Hidden by default */
+}
+
+.leaderboard ol li:hover {
+  z-index: 2;
+  overflow: visible; /* Show overflow on hover */
+}
+
+.leaderboard ol li:hover::after {
+  opacity: 1; /* Show background on hover */
+  transform: scaleX(1.06) scaleY(1.03); /* Slightly enlarge on hover */
+}
+
+.leaderboard ol li:hover mark::before,
+.leaderboard ol li:hover mark::after {
+  opacity: 1; /* Show arrow tips on hover */
+  transition: all 0.35s ease-in-out; /* Smooth transition */
+}
+
+.the-most {
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  width: 50vw;
+  max-width: 200px;
+  padding: 10px;
+}
+
+.the-most img {
+  max-width: 100%;
+}

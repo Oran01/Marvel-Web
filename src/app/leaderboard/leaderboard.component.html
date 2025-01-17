@@ -1,0 +1,26 @@
+<meta charset="UTF-8">
+<title>Leaderboard</title>
+
+<!-- External resources for icons and fonts -->
+<script src="https://kit.fontawesome.com/92d42647e8.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Banner Image -->
+<div>
+  <img src="../../assets/TriviaImg/new-marvel-banner.jpg" alt="banner" class="banner">
+</div>
+
+<!-- Leaderboard Section -->
+<div class="leaderboard">
+  <h1>
+    <img class="ico-cup" src="../../assets/trophy/sports-trophy.png" alt="Cup Icon">
+    Top Score
+  </h1>
+  <ol>
+    <!-- Iterate over leaderboardData to display each player and their score -->
+    <li *ngFor="let player of leaderboardData">
+      <mark>{{ player.username }}</mark>
+      <small>{{ player.score }}</small>
+    </li>
+  </ol>
+</div>
