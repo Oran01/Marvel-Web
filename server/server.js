@@ -4,10 +4,10 @@ const cors = require('cors');
 
 // Create a MySQL connection
 const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'marvel-web',
+   host: 'localhost', // Your MySQL host (e.g., localhost)
+  user: 'root',      // Your MySQL username
+  password: 'your-password', // Your MySQL password
+  database: 'marvel-web', // The name of the database
 });
 
 // Connect to the MySQL database
